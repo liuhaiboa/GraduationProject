@@ -2,7 +2,7 @@
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/graduationproject
+    url: jdbc:mysql://127.0.0.1:3306/graduationproject?useUnicode=true&useSSL=false&serverTimezone=UTC&characterEncoding=utf8
     username: root
     password: root
   redis:

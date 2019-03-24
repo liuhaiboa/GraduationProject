@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.api.R;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.homework.entity.User;
-import com.homework.shior.AccountProfile;
+
 
 import java.util.Map;
 
@@ -34,7 +34,7 @@ public interface UserService extends IService<User> {
      * @param password
      * @return
      */
-    AccountProfile login(String email, String password);
+//    AccountProfile login(String email, String password);
 
     /**
      * 注册
@@ -42,5 +42,5 @@ public interface UserService extends IService<User> {
      * @param user
      * @return
      */
-    R register(User user);
+//    R register(User user);
 }

@@ -6,6 +6,7 @@ package com.homework.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.api.R;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.homework.entity.User;
 import com.homework.mapper.UserMapper;
 import com.homework.service.UserService;
@@ -31,23 +32,25 @@ import java.util.Map;
  */
 //@Service
 //public class UserServiceImpl extends BaseServiceImpl<UserMapper, User> implements UserService {
+@Service
+public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
 
-//    @Override
-//    public void join(IPage<Map<String, Object>> pageData, String linkfield) {
-//        List<Map<String, Object>> records = pageData.getRecords();
-//
-//        records.forEach(map -> {
-//            String userId = map.get(linkfield).toString();
-//            User user = this.getById(userId);
-//
-//            Map<String, Object> author = new HashMap<>();
-//            author.put("username", user.getUsername());
-//            author.put("avatar", user.getAvatar());
-//            author.put("id", user.getId());
-//
-//            map.put("author", author);
-//        });
-//    }
+    @Override
+    public void join(IPage<Map<String, Object>> pageData, String linkfield) {
+        List<Map<String, Object>> records = pageData.getRecords();
+
+        records.forEach(map -> {
+            String userId = map.get(linkfield).toString();
+            User user = this.getById(userId);
+
+            Map<String, Object> author = new HashMap<>();
+            author.put("username", user.getUsername());
+            author.put("avatar", user.getAvatar());
+            author.put("id", user.getId());
+
+            map.put("author", author);
+        });
+    }
 
 //    @Override
 //    public AccountProfile login(String email, String password) {
@@ -122,4 +125,4 @@ import java.util.Map;
 //        map.put("author", joinColumns);
 //   }
 
-//}
+}
